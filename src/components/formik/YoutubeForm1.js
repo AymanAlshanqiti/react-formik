@@ -1,4 +1,5 @@
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 function YoutubeForm1() {
 	const initialValues = {
@@ -37,10 +38,16 @@ function YoutubeForm1() {
 		return errors;
 	};
 
+	let validationSchema = Yup.object({
+		name: Yup.string().min(4, 'At least 4 character').required(),
+		email: Yup.string().email().required(),
+		channel: Yup.string().required(),
+	});
+
 	const formik = useFormik({
 		initialValues: initialValues,
 		onSubmit: onSubmit,
-		validate: validate,
+		validationSchema: validationSchema,
 	});
 
 	return (
