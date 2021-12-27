@@ -1,13 +1,13 @@
 import React, { lazy, Suspense } from 'react';
 import './App.css';
 
-const YoutubeForm1 = lazy(() => import('./components/formik/YoutubeForm1'));
+const YoutubeForm2 = lazy(() => import('./components/formik/YoutubeForm2'));
 
 function App() {
 	return (
 		<div className="App">
 			<Suspense fallback={<div>loading ..</div>}>
-				<YoutubeForm1 />
+				<YoutubeForm2 />
 			</Suspense>
 		</div>
 	);
