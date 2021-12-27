@@ -1,15 +1,16 @@
 import React, { lazy, Suspense } from 'react';
-import './App.css';
 
-const YoutubeForm2 = lazy(() => import('./components/formik/YoutubeForm2'));
+const SignupForm = lazy(() =>
+	import('./components/formik/custom-input-fields/SignupForm')
+);
 
 function App() {
 	return (
-		<div className="App">
+		<>
 			<Suspense fallback={<div>loading ..</div>}>
-				<YoutubeForm2 />
+				<SignupForm />
 			</Suspense>
-		</div>
+		</>
 	);
 }
 
